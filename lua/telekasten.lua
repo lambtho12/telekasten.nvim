@@ -271,7 +271,7 @@ end
 local function make_config_path_absolute(path)
     local ret = path
     if not (Path:new(path):is_absolute()) and path ~= nil then
-        ret = M.Cfg.home .. "/" .. path
+        ret = Path:new(M.Cfg.home, path)
     end
     return ret
 end
